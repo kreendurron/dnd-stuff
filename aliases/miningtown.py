@@ -4,21 +4,21 @@
 towns = load_json(get_gvar("fa6f4eb9-1ea4-4c76-b6b8-eeed4ee3a0ed"))
 town = towns[0]
 
-townTaxRate = float(town.taxIncome)*100
+
 taxablePopulation = float(town.population) - float(town.laborers)
-income = float(town.workdays) * float(town.laborProfitability) * float(town.laborers)
-townTaxRevenue = floor(float(town.taxIncome)*income)
+townTaxRate = float(town.taxRate)*100
+townTaxRevenue = round(townTaxRate*taxablePopulation)
+income = float(town.laborOutput) * float(town.laborers) * float(town.workdays) + townTaxRevenue
 
-
-miscExpenseRate = float(town.miscExpenses)*100
-laborExpense = float(town.laborPayrate)*float(town.laborers)
-expenses = miscExpenseRate + laborExpense
+miscExpenseRate = float(town.miscExpenses)*100 # %15
+laborExpense = float(town.laborPayrate)*float(town.laborers) # 25,500
+expenses = floor(miscExpenseRate * laborExpense/100 + laborExpense) #29,325
 
 
 grossRevenue = floor(income + townTaxRevenue)
-nationalTaxRate = float(town.taxExpense)*100
-nationalTaxExpense = floor(float(town.taxExpense)*grossRevenue)
-netProfit = floor(grossRevenue * float(town.taxExpense) - expenses)
+nationalTaxRate = float(town.nationalTaxRate)*100
+nationalnationalTaxRate = floor(float(town.nationalTaxRate)*grossRevenue)
+netProfit = floor(grossRevenue * float(town.nationalTaxRate) - expenses)
 dailyIncome = floor(netProfit/365)
 
 
@@ -26,14 +26,15 @@ dailyIncome = floor(netProfit/365)
 
 -title "Welcome to {{town.name}}"
 
--desc "{{town.mine}}"
+-desc "Made possible by: {{town.mine}}"
 
 -f
 "
 **Town Statistics:**
 Population: {{town.population}}
 Laborers: {{town.laborers}}
-Town Tax Rate: {{round(float(townTaxRate))}}%
+Taxable Population: {{floor(taxablePopulation)}}
+Town Tax Rate: {{round(townTaxRate)}}%
 Town Tax Revenue: {{f'{townTaxRevenue:,}'}} GP/anum}
 "
 
@@ -41,9 +42,11 @@ Town Tax Revenue: {{f'{townTaxRevenue:,}'}} GP/anum}
 "
 **Expenses:**
 National Tax Rate: {{round(nationalTaxRate)}}%
-National Tax Expense: {{f'{nationalTaxExpense:,}'}} GP/anum}
+National Tax Expense: {{f'{nationalnationalTaxRate:,}'}} GP/anum}
 Miscelaneous Expenses: {{round(miscExpenseRate)}}%
-Labor Pay: {{town.laborPayrate}} GP/anum
+Labor Pay Rate: {{town.laborPayrate}} GP/anum
+Labor Expense: {{floor(laborExpense)}} GP/anum
+Expenses: {{expenses}}
 "
 
 -f "
