@@ -2,8 +2,11 @@
 <drac2>
 
 towns = load_json(get_gvar("fa6f4eb9-1ea4-4c76-b6b8-eeed4ee3a0ed"))
-town = towns[0]
+townnames = []
 
+for town in towns:
+  townnames.append(i.name)
+</drac2>
 
 taxablePopulation = float(town.population) - float(town.laborers)
 townTaxRate = float(town.taxRate)*100
@@ -27,7 +30,7 @@ dailyIncome = floor(netProfit/365)
 -title "Welcome to {{town.name}}"
 
 -desc "Made possible by: {{town.mine}}"
-
+-f "Town Names: {{townnames}}"
 -f
 "
 **Town Statistics:**
@@ -57,3 +60,14 @@ Daily Income: {{f'{dailyIncome:,}'}} GP/day
 "
 
 -footer "You can set the tax rate for your town. and other options coming soooon. (work in progress)"
+
+
+
+!tembed
+<drac2>
+towns = load_json(get_gvar("fa6f4eb9-1ea4-4c76-b6b8-eeed4ee3a0ed"))
+townnames = []
+for i in towns:
+  townnames.append(i.name)
+</drac2>
+-f "{{'\n'.join(townnames)}}"
