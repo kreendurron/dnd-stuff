@@ -1,26 +1,26 @@
-[
-    {
-        "name":"Ausanerek",
-        "population":"550",
-        "mine":"Ol'Boosie's Mines",
-        "laborers":"425",
-        "laborOutput":"4",
-        "taxRate":"0.02",
-        "nationalTaxRate":"0.85",
-        "laborPayrate":"60",
-        "miscExpenses":"0.85",
-        "workdays":"300"
-    },
-    {
-        "name":"Silverton",
-        "population":"1550",
-        "mine":"Trusties Mine Company",
-        "laborers":"1200",
-        "laborOutput":"4",
-        "taxRate":"0.03",
-        "nationalTaxRate":"0.45",
-        "laborPayrate":"60",
-        "miscExpenses":"0.85",
-        "workdays":"300"
-    }
-]
+{
+  "Zligmur": {
+    "Town Name":"Ausanerek",
+    "Population":"550",
+    "Mine":"Ol'Boosie's Mines",
+    "Laborers":"425",
+    "Labor Output":"4",
+    "Tax Rate":"0.02",
+    "National Tax Rate":"0.85",
+    "Labor Payrate":"60",
+    "Misc Expenses":"0.85",
+    "Work Days":"300"
+  },
+  "Cedril Jhaelian": {
+    "Town Name":"Silverton",
+    "Population":"1550",
+    "Mine":"Trusties Mine Company",
+    "Laborers":"1200",
+    "Labor Output":"4",
+    "Tax Rate":"0.03",
+    "National Tax Rate":"0.45",
+    "Labor Payrate":"60",
+    "Misc Expenses":"0.85",
+    "Work Days":"300"
+  }
+}
