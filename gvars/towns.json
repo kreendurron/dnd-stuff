@@ -1,6 +1,5 @@
 {
-  "Zligmur": {
-    "Town Name":"Ausanerek",
+  "Ausanerek": {
     "Population":"550",
     "Mine":"Ol'Boosie's Mines",
     "Laborers":"425",
@@ -11,8 +10,7 @@
     "Misc Expenses":"0.85",
     "Work Days":"300"
   },
-  "Cedril Jhaelian": {
-    "Town Name":"Silverton",
+  "Silverton": {
     "Population":"1550",
     "Mine":"Trusties Mine Company",
     "Laborers":"1200",

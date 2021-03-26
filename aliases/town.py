@@ -29,4 +29,4 @@ Daily Income: {{f'{dailyIncome:,}'}} GP/day
 "
 
 -footer """You can set the tax rate for your town and other options coming soooon. (work in progress).
-Feel free to help contribute @ https://github.com/kreendurron/dnd-stuff/blob/main/aliases/miningtown.py"""
+Feel free to help contribute @ https://github.com/kreendurron/dnd-stuff/blob/main/aliases/town.py"""
