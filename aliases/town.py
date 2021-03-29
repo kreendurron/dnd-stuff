@@ -31,5 +31,6 @@ Net Profit: {{f'{netProfit:,}'}} GP/anum
 Daily Income: {{f'{dailyIncome:,}'}} GP/day
 "
 
--f """You can set the tax rate for your town and other options coming soooon. (work in progress).
-Feel free to help contribute @ https://github.com/kreendurron/dnd-stuff/blob/main/aliases/town.py"""
+-f """You can set the tax rate for your town and other options coming soooon.
+Feel free to help contribute @ [mygithub](https://github.com/kreendurron/dnd-stuff/blob/main/aliases/town.py 'https://github.com/kreendurron/dnd-stuff/blob/main/aliases/town.py')"""
+-footer "Work In Progress"
