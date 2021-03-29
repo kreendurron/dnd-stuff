@@ -7,8 +7,10 @@ if get("townID") in g.keys():
     grossRevenue = 1000
     netProfit = 0
     dailyIncome = 0
-    out.append(f"""-title "{name}'s town: {townID}
-Statistics" """)
+    out.append(f"""
+-title "{name}'s Town: {townID}"
+-f "**Statistics**"
+""")
     for k,v in g[townID].items():
         out.append(f''' -f "{k.title()}|{v}|inline" ''')
 
