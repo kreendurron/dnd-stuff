@@ -4,10 +4,10 @@
     "Mine":"Ol'Boosie's Mines",
     "Laborers":"425",
     "Labor Output":"4",
-    "Tax Rate":"0.02",
-    "National Tax Rate":"0.85",
+    "Tax Rate":"2",
+    "National Tax Rate":"75",
     "Labor Payrate":"60",
-    "Misc Expenses":"0.85",
+    "Misc Expenses":"5",
     "Work Days":"300"
   },
   "Silverton": {
@@ -15,10 +15,10 @@
     "Mine":"Trusties Mine Company",
     "Laborers":"1200",
     "Labor Output":"4",
-    "Tax Rate":"0.03",
-    "National Tax Rate":"0.45",
+    "Tax Rate":"3",
+    "National Tax Rate":"45",
     "Labor Payrate":"60",
-    "Misc Expenses":"0.85",
+    "Misc Expenses":"10",
     "Work Days":"300"
   }
 }
