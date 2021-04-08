@@ -86,20 +86,29 @@ Expenses: {{f'{expenses:,}'}} GP/anum
 out = []
 
 g = load_json(get_gvar("575c8d91-53f2-4b44-a73c-ead0d9e8a1e5"))
+
+taxablePopulation = float(g[townID]["Population"])-float(g[townID]["Laborers"])
+taxRevenue = float(g[townID]["Tax Rate"]) * taxablePopulation / 100 + taxablePopulation
 income = float(g[townID]["Laborers"]) * float(g[townID]["Labor Payrate"])
-nationalTaxRate = float(float(g[townID]["National Tax Rate"]))#laborers(425) * laborPayrate(60) - ()
-um1 = nationalTaxRate * income
-um2 = nationalTaxRate * income / 100
+grossRevenue = income + taxRevenue
+
+netProfit = float(g[townID]["National Tax Rate"]) * grossRevenue / 100
+dailyIncome = grossRevenue / float(g[townID]["Work Days"])
+
 </drac2>
 
 -f "
 inspecting:
-nationalTaxRate * income = {{um1}}
-nationalTaxRate * income / 100 = {{um2}}
-national tax rate = {{g[townID]["National Tax Rate"]}}
-typeof nationalTaxRate = {{typeof(g[townID]["National Tax Rate"])}}
-qty of laboreres = {{g[townID]["Laborers"]}}
-labor Payrate = {{g[townID]["Labor Payrate"]}}
+
 Income: {{f'{income:,}'}} GP/anum
+netProfit or nationalTaxRate * income / 100 = {{netProfit}}
+national tax rate = {{g[townID]["National Tax Rate"]}}
+qty of laboreres = {{g[townID]["Laborers"]}}
+labor Payrate = {{g[townID]["Labor Payrate"]}} GP/anum (wip)
+
+taxablePopulation: {{f'{taxablePopulation:,}'}} People (wip)
+Gross Revenue: {{f'{grossRevenue:,}'}} GP/anum (wip)
+
+Daily Income: {{f'{dailyIncome:,}'}} GP/day (wip)
 
 "
